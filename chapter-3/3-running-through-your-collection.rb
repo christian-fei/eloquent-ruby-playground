@@ -19,3 +19,32 @@ puts index_for words, "just"
 
 puts words.find_index "just"
 
+
+# hashes also support an each method
+# though with a twist
+
+movies = [{
+    title: 'title1',
+    genre: 'genre1'
+  },{
+    title: 'title2',
+    genre: 'genre2'
+  }]
+
+puts "each do"
+movies.each do |movie|
+  puts movie
+  movie.each do |key, value|
+    puts "key #{key} value #{value}"
+  end
+end
+
+puts "\neach block"
+
+movies.each {
+  |movie|
+  movie.each {
+    |key, value|
+    puts "key #{key} value #{value}"
+  }
+}
