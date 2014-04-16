@@ -15,14 +15,14 @@ end
 arbitrary_params "foo", "bar"
 
 # semi arbitrary number of arguments
-def semi_arbitrary_params(first, *arb_args, last)
-  puts "first", first
-  arb_args.each do |arg|
-    puts arg
-  end
-  puts "last", last
-end
-semi_arbitrary_params "foo", 1,2,3, "bar"
+#def semi_arbitrary_params( first, *arb_args, last )
+#  puts "first #{first}"
+#  arb_args.each do |arg|
+#    puts arg
+#  end
+#  puts "last #{last}"
+#end
+#semi_arbitrary_params "foo", 1,2,3, "bar"
 
 
 # specification hash
@@ -33,5 +33,8 @@ def setup( spec_hash )
     puts "no :name symbol!"
   end
 end
-setup name: "bar"
+setup( {:name => "bar"} )
+hash = {:name => "bar"} 
+setup hash
+setup :name => "bar"
 setup :foo => "bar"
