@@ -1,0 +1,15 @@
+start_story = "Once upon a time"
+end_story = "happily ever after"
+whole_story = "Titlt of the book
+Once upon a time...
+... happily ever after
+The end"
+
+
+r_start = /\AOnce upon a time/
+r_end = /happily ever after\z/
+r_multi_line = /^Once upon a time.*happily ever after$/m
+
+puts "starts with 'Once upon a time'" if start_story =~ r_start
+puts "ends with 'happily ever after'" if end_story =~ r_end
+puts "is a fairytale" if whole_story =~ r_multi_line
